@@ -6,11 +6,6 @@ SwaggerUI 生成器，可根据 用户注释 自动生成 OpenAPI 的工具。
 
 特别感谢：https://github.com/Yanshijie-EL/egg-swagger-doc
 
-## 说明
-
-- 为什么没有直接 fork，然后 PR ？原因是原作者的代码是 Swagger 2.0 规范，与 openAPI 3.0 规范有一定的出入，改动比较大。
-- 为什么一定要生成 openAPI 3.0 规范的格式和文件？因为，另外两个插件都将按照该规范一键生成 前端和后台的 Models 。当然，还有其他更多需求。
-
 ## 升级改进
 
 1. 支持 openAPI 3.0 版本，详细规范：[openAPI v3.0.0](https://swagger.io/docs/specification/v3_0/describing-request-body/describing-request-body/)；(如果想要支持 Swagger 2.0 规范，请使用原作者的插件)
