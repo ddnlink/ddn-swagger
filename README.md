@@ -12,8 +12,13 @@ SwaggerUI 生成器，可根据 用户注释 自动生成 OpenAPI 的工具。
 2. [x]  支持 RESTful API 参数自动生成；
 3. [x]  升级到最新版的 swagger-ui-dist 包；
 4. [x] 使用生成的 openAPI.json 生成前端的 Models，请使用插件 [@ddn/openapi](https://github.com/ddnlink/ddn-openapi)；
-5. [ ]  支持命令行执行，保证平台无关性，支持除了 Egg.js 框架之外更多应用；
-6. [ ]  更多功能待完善。
+5. [x] **支持安全认证中间件自动映射**：通过安全注解自动添加认证中间件，实现真正的安全验证；
+6. [ ]  支持命令行执行，保证平台无关性，支持除了 Egg.js 框架之外更多应用；
+7. [ ]  更多功能待完善。
+
+## 文档
+
+- [安全认证技术文档](docs/security-authentication.md) - 详细介绍安全认证功能的配置和使用方法
 
 ## 安装
 
@@ -271,7 +276,7 @@ ctx.validate(ctx.rule.createResource, ctx.request.body);
 
 ## Questions & Suggestions
 
-Please open an issue [here](https://github.com/ddnlink/egg-swagger-docs/issues).
+Please open an issue [here](https://github.com/ddnlink/ddn-swagger/issues).
 
 ## License
 
