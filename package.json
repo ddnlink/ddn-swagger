@@ -1,6 +1,6 @@
 {
   "name": "@ddn/swagger-docs",
-  "version": "2.3.9",
+  "version": "2.4.0",
   "description": "Swagger for egg",
   "eggPlugin": {
     "name": "swaggerdoc"
@@ -11,7 +11,7 @@
     "egg-plugin"
   ],
   "dependencies": {
-    "koa-static-cache": "^5.1.2"
+    "koa-static-cache": "^5.1.4"
   },
   "devDependencies": {
     "autod": "^3.0.0",
