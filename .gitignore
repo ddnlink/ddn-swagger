@@ -2,6 +2,7 @@ run
 .idea
 .travis.yml
 .DS_Store
+app/.DS_Store
 appveyor.yml
 
 # Logs
