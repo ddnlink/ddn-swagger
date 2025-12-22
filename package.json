@@ -1,6 +1,6 @@
 {
   "name": "@ddn/swagger-docs",
-  "version": "2.4.2",
+  "version": "2.4.5",
   "description": "Swagger for egg",
   "eggPlugin": {
     "name": "swaggerdoc"
