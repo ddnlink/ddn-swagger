@@ -11,10 +11,14 @@ SwaggerUI 生成器，可根据 用户注释 自动生成 OpenAPI 的工具。
 1. [x]  支持 openAPI 3.0 版本，详细规范：[openAPI v3.0.0](https://swagger.io/docs/specification/v3_0/describing-request-body/describing-request-body/)；(如果想要支持 Swagger 2.0 规范，请使用原作者的插件)
 2. [x]  支持 RESTful API 参数自动生成；
 3. [x]  升级到最新版的 swagger-ui-dist 包；
-4. [x] 使用生成的 openAPI.json 生成前端的 Models，请使用插件 [@ddn/openapi](https://github.com/ddnlink/ddn-openapi)；
+4. [x] 使用生成的 http://localhost:7001/swagger-doc 生成前端的 Models，请使用插件 [@ddn/openapi](https://github.com/ddnlink/ddn-openapi)；
 5. [x] **支持安全认证中间件自动映射**：通过安全注解自动添加认证中间件，实现真正的安全验证；
-6. [ ]  支持命令行执行，保证平台无关性，支持除了 Egg.js 框架之外更多应用；
-7. [ ]  更多功能待完善。
+6. [x] **智能路由排序**：
+    - 优先级规则：精准路径 (Static) > 动态参数 (Param) > 通配符 (Wildcard)，确保路由匹配的正确性；
+    - 聚合规则：同类型的静态路径按字母顺序排序，确保同一模块的路由聚合在一起，不再混杂；
+7. [x] **增强的环境兼容性**：优化了 Swagger UI 静态资源的路径解析逻辑，完美支持 Docker、PnP 等复杂环境；
+8. [ ]  支持命令行执行，保证平台无关性，支持除了 Egg.js 框架之外更多应用；
+9. [ ]  更多功能待完善。
 
 ## 文档
 
@@ -74,10 +78,25 @@ exports.swaggerdoc = {
   },
   enableSecurity: false,
   // enableValidate: true,
-  routerMap: false,
   enable: true,
+  routerMap: false,
+  routerCli: false, // 是否在启动时打印路由注册日志
+  routerPath: '', // 路由映射文件导出路径，为空则不导出，例如 './run/router_map.md'
 };
 ```
+
+### 配置参数说明
+
+| 参数 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| dirScanner | String | './app/controller' | 插件扫描的文档路径 |
+| apiInfo | Object | - | Swagger 文档信息 |
+| securitySchemes | Object | - | 安全验证配置 |
+| enableSecurity | Boolean | false | 是否启用安全验证 |
+| enable | Boolean | true | 是否启用 Swagger UI, 会生成 http://localhost:7001/swagger-doc  |
+| routerMap | Boolean | false | 是否自动生成路由（实验性功能） |
+| **routerCli** | Boolean | false | **(新增)** 是否在应用启动时，在控制台打印详细的路由注册日志，方便调试 |
+| **routerPath** | String | '' | **(新增)** 路由映射表导出路径。如果设置（如 `./run/router_map.md`），启动时会将所有注册的路由导出为 Markdown 表格，方便查阅和比对 |
 
 see [config/config.default.js](config/config.default.js) for more detail.
 

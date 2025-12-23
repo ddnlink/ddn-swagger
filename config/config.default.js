@@ -47,8 +47,10 @@ exports.swaggerdoc = {
   },
   enableSecurity: false,
   // enableValidate: true,
-  routerMap: false,
   enable: true,
+  routerMap: false,
+  routerCli: false, // 是否在启动时打印路由注册日志
+  routerPath: '', // 路由映射文件导出路径，为空则不导出，例如 './run/router_map.md'
 };
 
 exports.security = {
