@@ -1,6 +1,6 @@
 {
   "name": "@ddn/swagger-docs",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "Swagger for egg",
   "eggPlugin": {
     "name": "swaggerdoc"
@@ -38,10 +38,10 @@
     "autod": "autod"
   },
   "files": [
-    "app.js",
-    "config",
     "app",
-    "lib"
+    "lib",
+    "config",
+    "app.js"
   ],
   "ci": {
     "version": "8, 9"

@@ -51,6 +51,7 @@ exports.swaggerdoc = {
   routerMap: false,
   routerCli: false, // 是否在启动时打印路由注册日志
   routerPath: '', // 路由映射文件导出路径，为空则不导出，例如 './run/router_map.md'
+  strictMode: false, // 严格模式，开启后路由解析错误会抛出异常而不是跳过
 };
 
 exports.security = {

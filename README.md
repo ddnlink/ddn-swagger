@@ -77,11 +77,17 @@ exports.swaggerdoc = {
     // },
   },
   enableSecurity: false,
-  // enableValidate: true,
+  enableValidate: true,
   enable: true,
   routerMap: false,
-  routerCli: false, // 是否在启动时打印路由注册日志
-  routerPath: '', // 路由映射文件导出路径，为空则不导出，例如 './run/router_map.md'
+  routerMap: true, // 启用自动路由映射，就不用手动添加路由了，如果改为false，则需要在 app/router.js 中手动添加路由
+  routerPath: '', // 路由映射文件导出路径，为空则不导出，方便调试，例如 './run/router_map.md'
+  routerCli: false, // 是否在命令行输出路由注册信息
+  strictMode: false, // 严格模式，开启后路由解析错误会抛出异常而不是跳过
+
+  // 公开路径配置（不需要认证的路径）
+  // 注意：/api/v1/cms/interactions 已移除白名单，需要认证才能操作（点赞、收藏等）
+  publicPaths: [],
 };
 ```
 
